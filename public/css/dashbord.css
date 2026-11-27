@@ -1,0 +1,185 @@
+/* poppins-regular - latin */
+@font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./fuentes/poppins-v24-latin-regular.woff2') format('woff2'); 
+}
+
+/* poppins-700 - latin */
+@font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    src: url('./fuentes/poppins-v24-latin-700.woff2') format('woff2');
+}
+
+html, body { height: 100%; margin: 0; overflow: hidden; }
+body { 
+    display: flex; 
+    flex-direction: column;
+    font-family: 'Poppins', sans-serif; 
+}
+
+.wrapper { display: flex; flex-grow: 1; overflow: hidden; position: relative; }
+
+/* Sidebar con transición para suavidad */
+.sidebar {
+    width: 250px;
+    background: #1a1a1a; /* Gris casi negro para que el verde resalte como en el logo */
+    color: white;
+    flex-shrink: 0;
+    transition: all 0.3s;
+    z-index: 1000;
+    border-right: 2px solid #00E676; /* Línea sutil del verde de la insignia */
+}
+
+/* Estilo para móviles: se oculta a la izquierda */
+@media (max-width: 768px) {
+    .sidebar {
+        position: absolute;
+        height: 100%;
+        left: -250px;
+    }
+    .sidebar.active {
+        left: 0;
+    }
+}
+
+.main-container { flex-grow: 1; display: flex; flex-direction: column; overflow: hidden; }
+.content-area { flex-grow: 1; overflow-y: auto; padding: 20px; background-color: #f8f9fa; }
+.footer-cc { background: #e9ecef; padding: 10px; text-align: center; border-top: 1px solid #dee2e6; flex-shrink: 0; }
+
+/* Estilo base para los links del sidebar */
+.sidebar .nav-link {
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    margin-bottom: 5px;
+    padding: 10px 15px;
+    color: white !important; /* Aseguramos que el texto sea blanco */
+}
+
+/* Efecto HOVER (usando el verde de la insignia) */
+.sidebar .nav-link:hover {
+    background-color: rgba(0, 230, 118, 0.1); /* Verde muy transparente */
+    color: #00E676 !important;               /* Verde institucional */
+    transform: translateX(5px);
+}
+
+/* Estilo para la opción ACTIVA (Verde sólido de la insignia) */
+.sidebar .nav-link.active {
+    background-color: #00E676; 
+    color: #000000 !important; /* Texto negro para contraste con el verde brillante */
+    font-weight: bold;
+}
+
+/* Estilizar el buscador de DataTables */
+.dataTables_filter input {
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
+    padding: 5px 12px;
+    margin-left: 10px;
+    outline: none;
+}
+
+.dataTables_filter input:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+/* Estilizar la paginación */
+.page-item.active .page-link {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+#sidebar {
+    min-height: calc(100vh - 56px); /* Altura total menos la navbar */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Efecto hover para los links para que se vea más pro */
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #0d6efd !important;
+}
+
+/* estilos-reporte.css */
+
+/* Estilos para visualización en pantalla */
+.reporte-impresion {
+    background-color: white;
+    color: black;
+    max-width: 900px;
+    margin: auto;
+    font-family: Arial, sans-serif;
+}
+
+.tabla-reporte-compacta {
+    font-size: 0.65rem !important;
+    margin-bottom: 0 !important;
+    width: 100% !important;
+}
+
+.cabecera-reporte {
+    border-bottom: 2px solid #000;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.texto-mini {
+    font-size: 0.6rem !important;
+}
+
+.resumen-asistencia {
+    font-size: 0.65rem;
+    border: 1px solid #000;
+    margin-top: 15px;
+}
+
+/* REGLAS CRÍTICAS DE IMPRESIÓN */
+@media print {
+    /* Configuración de la hoja física */
+    @page {
+        size: letter;
+        margin: 0.5cm !important;
+    }
+
+    /* Forzar que los colores se impriman (cabeceras oscuras) */
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    /* Ocultar TODO lo que no sea el reporte */
+    nav, .sidebar, .navbar, .btn, .d-print-none, header, footer {
+        display: none !important;
+    }
+
+    /* Ajustar el contenedor para que no tenga bordes ni sombras de tarjeta */
+    .reporte-impresion {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+    }
+
+    /* Evitar que el navegador añada URL y fecha */
+    body {
+        margin: 0 !important;
+        padding: 0 !important;
+        background: white !important;
+    }
+
+    /* Asegurar que la tabla no se corte */
+    table {
+        page-break-inside: auto;
+    }
+    tr {
+        page-break-inside: avoid;
+        page-break-after: auto;
+    }
+}

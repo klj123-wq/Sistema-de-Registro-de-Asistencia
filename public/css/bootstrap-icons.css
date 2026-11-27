@@ -1,0 +1,69 @@
+@font-face {
+  font-family: "bootstrap-icons";
+  src: url("./fonts/bootstrap-icons.woff2") format("woff2"),
+       url("./fonts/bootstrap-icons.woff") format("woff");
+}
+.bi::before,
+[class^="bi-"]::before,
+[class*=" bi-"]::before {
+  display: inline-block;
+  font-family: bootstrap-icons !important;
+  font-style: normal;
+  font-weight: normal !important;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  vertical-align: -.125em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Iconos que tú pediste */
+.bi-house::before { content: "\f425"; }
+.bi-file-person-fill::before { content: "\f3a8"; }
+.bi-clipboard2-fill::before { content: "\f74a"; }
+.bi-clipboard-fill::before { content: "\f26d"; }
+.bi-lock::before { content: "\f47b"; }
+
+.bi-people-fill::before { content: "\f4db"; }
+.bi-check-circle-fill::before { content: "\f268"; }
+.bi-x-circle-fill::before { content: "\f62a"; }
+
+/* --- ICONOS NUEVOS PARA GESTIÓN DE PERSONAL --- */
+.bi-people-fill::before { content: "\f4db"; }       /* Icono principal de grupo */
+.bi-person-plus-fill::before { content: "\f4e1"; }  /* Botón de registrar */
+.bi-pencil::before { content: "\f4ca"; }            /* Botón editar (lápiz) */
+.bi-trash::before { content: "\f5de"; }             /* Botón eliminar (papelera) */
+
+/* --- ICONOS PARA LAS TARJETAS DE INICIO --- */
+.bi-check-circle-fill::before { content: "\f268"; } /* Asistencias (Check) */
+.bi-x-circle-fill::before { content: "\f62a"; }     /* Inasistencias (X) */
+
+/* --- ICONOS NUEVOS: ASISTENCIA (ADMIN) --- */
+.bi-calendar-check::before { content: "\f1f0"; }    /* Título principal */
+.bi-file-earmark-excel::before { content: "\f36a"; } /* Botón Reporte Excel */
+.bi-plus-circle::before { content: "\f4ca"; }        /* Botón Marcaje Manual */
+.bi-three-dots::before { content: "\f5d3"; }         /* Botón de acciones en tabla */
+
+/* --- ICONOS PARA ESTADOS EN TABLA --- */
+.bi-check2-circle::before { content: "\f26d"; }     /* Estado: A tiempo */
+.bi-exclamation-circle::before { content: "\f337"; } /* Estado: Retraso */
+.bi-dash-circle::before { content: "\f2d3"; }       
+
+.bi-eye-fill::before { content: "\f341"; }        /* Ver historial (Ojo relleno) */
+.bi-chat-quote-fill::before { content: "\f254"; } /* Justificar (Burbuja de texto) */
+.bi-pencil-square::before { content: "\f4cb"; }   /* Editar Registro (Cuadrado con lápiz) */
+
+/* Ajuste de tamaño para que se vean imponentes */
+.btn-group .btn i {
+    font-size: 1.3rem; 
+    vertical-align: middle;
+}
+
+.bi-arrow-bar-left::before { content: "\f12a"; }
+
+/* .bi-arrow-left::before { content: "\f12f"; } */
+.bi-person-fill::before { content: "\f4da"; }
+.bi-box-arrow-left::before { content: "\f177"; }
+
+.bi-qr-code::before { content: "\f186"; }

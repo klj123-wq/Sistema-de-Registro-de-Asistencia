@@ -1,0 +1,22 @@
+SISTEMA DE REGISTRO DE ASISTENCIA
+
+Estimado(a) {{nombre}}:
+
+Hemos recibido una solicitud para restablecer su
+contrasena. Utilice el siguiente codigo de verificacion:
+
+CODIGO: {{codigo}}
+
+Este codigo expira en 3 minutos.
+Si usted no solicito este cambio, puede ignorar este correo.
+
+Atentamente,
+Coordinacion Academica
+
+--------------------------------------
+
+{{escuela}}
+{{direccion}}
+Tel: {{telefono}}
+
+Este es un correo automatico. Por favor no responder.

@@ -1,0 +1,17 @@
+SISTEMA DE REGISTRO DE ASISTENCIA
+
+Estimado(a) {{nombre}}:
+
+Le informamos que su correo {{correo}} ha sido
+registrado correctamente en el sistema.
+
+Atentamente,
+Coordinacion Academica
+
+--------------------------------------
+
+{{escuela}}
+{{direccion}}
+Tel: {{telefono}}
+
+Este es un correo automatico. Por favor no responder.
