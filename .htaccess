@@ -1,0 +1,23 @@
+RewriteEngine On
+
+# Bloquear acceso directo a carpetas internas y archivos ocultos
+RewriteRule ^(app|config|database|vendor|sql|logs)(/|$) - [F,L]
+RewriteRule (^|/)\. - [F,L]
+
+# Dejar pasar si ya apunta a public/
+RewriteCond %{REQUEST_URI} ^/public(/|$)
+RewriteRule ^ - [L]
+
+# Si el archivo o carpeta existe dentro de public/, servirlo directo
+RewriteCond %{DOCUMENT_ROOT}/public%{REQUEST_URI} -f [OR]
+RewriteCond %{DOCUMENT_ROOT}/public%{REQUEST_URI} -d
+RewriteRule ^(.*)$ public/$1 [QSA,L]
+
+# Fallback al front controller (rutas inexistentes)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ public/index.php [QSA,L]
+
+# IMPORTANTE: la raíz (con o sin query string) siempre al front controller
+# Esto es lo que arregla /?i=1
+RewriteRule ^$ public/index.php [QSA,L]
